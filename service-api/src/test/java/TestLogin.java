@@ -36,7 +36,9 @@ public class TestLogin {
     @Before
     public void init(){
 
-        when(userService.findByUsername(any())).thenReturn(new User("teste", "lalala", "Teste", "Testado"));
+        when(userService.findByUsername(any()))
+                .thenReturn(
+                        new User("teste", "lalala", "Teste", "Testado"));
     }
 
 
