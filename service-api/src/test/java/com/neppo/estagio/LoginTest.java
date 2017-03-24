@@ -1,3 +1,5 @@
+package com.neppo.estagio;
+
 import com.neppo.estagio.data.model.User;
 import com.neppo.estagio.service.data.UserService;
 import com.neppo.estagio.service.login.LoginListener;
@@ -18,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestLogin {
+public class LoginTest {
 
     @Mock
     private UserService userService;
