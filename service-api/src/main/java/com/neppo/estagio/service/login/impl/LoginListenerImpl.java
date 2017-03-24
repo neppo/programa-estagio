@@ -1,6 +1,6 @@
 package com.neppo.estagio.service.login.impl;
 
-import com.neppo.estagio.service.login.LoginHandler;
+import com.neppo.estagio.service.login.LoginListener;
 import com.neppo.estagio.service.login.LoginObserver;
 import com.neppo.estagio.data.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class LoginHandlerImpl implements LoginHandler {
+public class LoginListenerImpl implements LoginListener {
 
     private final List<LoginObserver> observers;
 
     @Autowired
-    public LoginHandlerImpl(){
+    public LoginListenerImpl(){
         this.observers = new ArrayList<>();
     }
 

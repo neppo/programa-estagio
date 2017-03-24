@@ -1,6 +1,6 @@
 import com.neppo.estagio.data.model.User;
 import com.neppo.estagio.service.data.UserService;
-import com.neppo.estagio.service.login.LoginHandler;
+import com.neppo.estagio.service.login.LoginListener;
 import com.neppo.estagio.service.login.LoginService;
 import com.neppo.estagio.service.login.impl.ConsoleLogObserverImpl;
 import com.neppo.estagio.service.login.impl.DatabaseLogObserverImpl;
@@ -30,7 +30,7 @@ public class TestLogin {
     private DatabaseLogObserverImpl databaseLogObserver;
 
     @Mock
-    private LoginHandler loginHandler;
+    private LoginListener loginListener;
 
 
     @Before
@@ -44,7 +44,7 @@ public class TestLogin {
 
     @Test
     public void testSuccess(){
-        LoginService loginService = new LoginServiceImpl(userService, loginHandler, consoleLogObserver, databaseLogObserver);
+        LoginService loginService = new LoginServiceImpl(userService, loginListener, consoleLogObserver, databaseLogObserver);
 
         boolean success = loginService.login("teste", "lalala");
 
@@ -54,7 +54,7 @@ public class TestLogin {
 
     @Test
     public void testFail(){
-        LoginService loginService = new LoginServiceImpl(userService, loginHandler, consoleLogObserver, databaseLogObserver);
+        LoginService loginService = new LoginServiceImpl(userService, loginListener, consoleLogObserver, databaseLogObserver);
 
         boolean success = loginService.login("teste", "lalal");
 

@@ -3,7 +3,7 @@ package com.neppo.estagio.service.login;
 import com.neppo.estagio.data.model.User;
 
 
-public interface LoginHandler {
+public interface LoginListener {
 
     void register(LoginObserver obj);
 
